@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Books</h1>
+<ul>
+    {% for book in books%}
+        <li>Title: <a href="{% url 'book' book.id %}">{{book.title}} --- {{book.description}}</a></li>
+        <!--
+            used a django url tag - specify this is a url, book is the url name specified at views.py. outside of the quotes we pass the dynamic value
+        -->
+    {% endfor %}
+</ul>
+
+{% endblock content %}
